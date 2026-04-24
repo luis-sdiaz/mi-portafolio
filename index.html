@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Luis Sebastian Diaz | Software Engineering</title>
+    <style>
+        :root{
+            --bg-color: #0b0b0c;
+            --accent-color: #27ae60; 
+            --accent-color-soft: rgba(39,174,96,0.12);
+            --text-main: #eaeaea;
+            --text-dim: #9a9a9a;
+            --card-border: rgba(255,255,255,0.06); 
+            --glass-strong: rgba(255,255,255,0.035);
+        }
+
+        /* página */
+        html,body{height:100%;}
+        body{
+            margin:0;
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:28px;
+            
+            background-image:
+                radial-gradient(800px 400px at 10% 10%, rgba(39,174,96,0.035), transparent 20%),
+                radial-gradient(600px 300px at 90% 90%, rgba(46,204,113,0.02), transparent 18%);
+        }
+
+        .card{
+            width:100%;
+            max-width:480px;
+            padding:44px 36px;
+            border-radius:20px;
+            text-align:center;
+            position:relative;
+            
+            background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.02) 100%);
+            backdrop-filter: blur(20px) saturate(120%);
+            -webkit-backdrop-filter: blur(20px) saturate(120%); 
+            border: 0.8px solid var(--card-border);
+            box-shadow: 0 12px 40px rgba(3,6,10,0.6);
+            overflow:hidden;
+        }
+
+        .card::after{
+            content:"";
+            position:absolute;
+            inset:0;
+            border-radius:inherit;
+            pointer-events:none;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+        }
+
+        .profile-container{
+            width:100px;
+            height:100px;
+            margin:0 auto 24px;
+        }
+
+        .profile-img{
+            width:100%;
+            height:100%;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            font-size:36px;
+            color: #071012;
+            background: linear-gradient(135deg, rgba(39,174,96,1) 0%, rgba(46,204,113,1) 100%);
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 8px 22px rgba(39,174,96,0.06);
+        }
+
+        h1{
+            margin:8px 0 6px;
+            font-size:26px;
+            letter-spacing:-0.3px;
+            color:var(--text-main);
+            font-weight:700;
+        }
+
+        .subtitle{
+            color: var(--accent-color);
+            font-weight:600;
+            text-transform:uppercase;
+            font-size:11px;
+            letter-spacing:2.4px;
+            margin-bottom:18px;
+        }
+
+        .description{
+            color:var(--text-dim);
+            font-size:14px;
+            line-height:1.6;
+            margin:0 auto 28px;
+            max-width:360px;
+        }
+
+        .tag-container{
+            display:flex;
+            gap:8px;
+            justify-content:center;
+            flex-wrap:wrap;
+            margin-bottom:26px;
+        }
+
+        .tag{
+            background: var(--accent-color-soft);
+            color: var(--accent-color);
+            padding:6px 12px;
+            border-radius:999px;
+            font-size:11px;
+            font-weight:700;
+            text-transform:uppercase;
+            border: 0.6px solid rgba(39,174,96,0.12);
+            letter-spacing:0.6px;
+        }
+
+        .links-container{
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        .link-card{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            text-decoration:none;
+            color:var(--text-main);
+            background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.006));
+            padding:14px;
+            border-radius:12px;
+            border: 0.7px solid rgba(255,255,255,0.04);
+            font-weight:600;
+            transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+            font-size:14px;
+        }
+
+        .link-card span{
+            color:var(--accent-color);
+            font-size:18px;
+            line-height:1;
+        }
+
+        .link-card:hover{
+            transform: translateY(-4px);
+            border-color: rgba(39,174,96,0.18);
+            background: linear-gradient(180deg, rgba(39,174,96,0.04), rgba(39,174,96,0.02));
+            box-shadow: 0 8px 30px rgba(39,174,96,0.06);
+        }
+
+        footer{
+            margin-top:32px;
+            font-size:10px;
+            color: rgba(234,234,234,0.55);
+            text-transform:uppercase;
+            letter-spacing:1px;
+        }
+
+        @media (max-width:420px){
+            .card{ padding:28px 20px; }
+            .profile-container{ width:84px; height:84px; }
+            h1{ font-size:22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="profile-container">
+            <div class="profile-img">LD</div>
+        </div>
+
+        <h1>Luis Sebastián Diaz</h1>
+        <div class="subtitle">Software Engineering Student</div>
+
+        <p class="description">
+            4º Semestre | UCC Pasto <br><br>
+            Desarrollador en formación enfocado en la construcción de soluciones eficientes y escalables utilizando tecnologías modernas.
+        </p>
+
+        <div class="tag-container">
+            <span class="tag">JAVA</span>
+            <span class="tag">PYTHON</span>
+            <span class="tag">TYPESCRIPT</span>
+            <span class="tag">GITHUB</span>
+        </div>
+
+        <div class="links-container">
+            <a href="TU_LINK_DE_MONITOREO" class="link-card" target="_blank">
+                Sistema de Monitoreo <span>→</span>
+            </a>
+
+            <a href="TU_LINK_DE_MUSICA" class="link-card" target="_blank">
+                Reproductor de Música <span>→</span>
+            </a>
+
+            <a href="https://github.com/Luis-Sdiaz" class="link-card" target="_blank">
+                GitHub Professional <span>→</span>
+            </a>
+        </div>
+
+        <footer>
+            Built with Code • 2026 • luis-diaz.dev
+        </footer>
+    </div>
+</body>
+</html>
